@@ -1,0 +1,215 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    padding: 10px;
+    position: relative;
+}
+
+    body::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        /*background-image: url("/images/paper.jpg");*/
+
+    z-index: -1;
+}
+
+/* Form Container */
+.wrapper {
+    width: 400px;
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: all 0.3s ease;
+    
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+    .wrapper:hover {
+        box-shadow: 12px 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+/* Title */
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+/* Input Fields */
+.input-field {
+    position: relative;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    margin: 20px 0;
+}
+
+    .input-field label {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-90%);
+        font-size: 16px;
+        color: #ffffff;
+        transition: 0.3s ease;
+    }
+
+    .input-field input {
+        width: 100%;
+        height: 40px;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        color: #ffffff;
+        padding-left: 5px;
+    }
+
+        /* Focus Effect */
+        .input-field input:focus ~ label,
+        .input-field input:valid ~ label {
+            top: 10px;
+            font-size: 0.9em;
+            color: #ffddc1;
+        }
+
+/* Remember Me Container */
+.remember {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* ปรับสไตล์ Label ให้ดูเรียบร้อยขึ้น */
+.remember-label {
+    display:inline-flex;
+    align-items: center;
+    gap: 1px; /* ทำให้ Checkbox กับข้อความมีระยะห่างที่พอดี */
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+}
+    /* ซ่อน Checkbox เริ่มต้น */
+    .remember-label input[type="checkbox"] {
+        opacity: 0;
+        position: absolute;
+        width: 0;
+        height: 0;
+    }
+
+.remember-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px; /* เพิ่มระยะห่างจากปุ่ม Login */
+}
+
+/* สร้าง Checkbox Custom */
+.custom-checkbox {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #27193c;
+    border-radius: 4px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+
+/* ใส่เครื่องหมายถูกเมื่อ Checkbox ถูกเลือก */
+.remember-label input[type="checkbox"]:checked + .custom-checkbox {
+    background-color: #ffffff;
+    border-color: #ffffff
+}
+
+    .remember-label input[type="checkbox"]:checked + .custom-checkbox::after {
+        content: "✔";
+        color: #27193c;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+/* เอฟเฟกต์ Hover */
+.remember-label:hover .custom-checkbox {
+    border-color: #ffddc1;
+}
+.remember-label input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+/* Button */
+button {
+    width: 100%;
+    background-color: #27193c;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    padding: 12px;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-top: 40px;
+}
+
+    button:hover {
+        background: #800080;
+        box-shadow: 2px 4px 8px rgba(255, 255, 255, 0.2);
+    }
+
+/* สไตล์สำหรับ Dashboard Dropdown */
+.form-select {
+    width: 100%;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1); /* ทำให้โปร่งแสงเล็กน้อย */
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    appearance: none; /* ซ่อน UI พื้นฐานของ select */
+}
+
+    /* เมื่อโฟกัสที่ dropdown */
+    .form-select:focus {
+        border-color: #ffddc1;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: none; /* ปิดเอฟเฟกต์ของ Bootstrap */
+    }
+
+    /* เปลี่ยนสีของตัวเลือกภายใน dropdown */
+    .form-select option {
+        background: #27193c;
+        color: #ffffff;
+        padding: 10px;
+    }
+
+    /* เอฟเฟกต์ hover */
+    .form-select:hover {
+        border-color: #ffddc1;
+    }

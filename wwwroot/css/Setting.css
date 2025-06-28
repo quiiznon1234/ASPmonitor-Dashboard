@@ -1,0 +1,233 @@
+﻿/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: flex-start;
+}
+.dashboard-room,.section {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1 1 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 500px; /* เพิ่มขนาดขั้นต่ำของแต่ละส่วน */
+    max-width: 700px; /* เพิ่มขนาดสูงสุดของแต่ละส่วน */
+}
+
+/* Dashboard Room */
+.dashboard-room {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+    .dashboard-room h2 {
+        margin-top: 0;
+        background-color: #298fc2;
+        color: white;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 8px 8px 0 0;
+    }
+
+table {
+    width:100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+}
+
+/* Section */
+.section {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #298fc2;
+    padding: 10px;
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+    .section-header h2 {
+        margin: 0;
+    }
+
+.text-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+    .text-button:hover {
+        text-decoration: underline;
+    }
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-top: 1px solid #ccc; /* แสดงเฉพาะเส้นแนวนอนด้านบน */
+    border-bottom: 1px solid #ccc; /* แสดงเฉพาะเส้นแนวนอนด้านล่าง */
+    border-left: none; /* ลบเส้นแนวตั้งด้านซ้าย */
+    border-right: none; /* ลบเส้นแนวตั้งด้านขวา */
+    border-top: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.close {
+    color: black; /* สีดำปกติ */
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #333; /* สีเข้มขึ้นเมื่อ Hover */
+        text-decoration: none;
+    }
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.text-button {
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center;
+}
+
+#saveSection {
+    background-color: #298fc2;
+    color: white; 
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px; 
+    cursor: pointer; 
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+    #saveSection:hover {
+        box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* เงาเพิ่มเมื่อ hover */
+    }
+
+    #saveSection:active {
+        background-color: #3e8e41; /* สีเข้มขึ้นเมื่อคลิก */
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* ลดเงาเมื่อคลิก */
+        transform: translateY(2px); /* ขยับลงเล็กน้อยเมื่อคลิก */
+    }
+
+tr.selected {
+    background-color: #ffdddd; /* พื้นหลังสีแดงอ่อนเมื่อถูกเลือก */
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #298fc2;
+    padding: 2.5px;
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Modal สำหรับ Input Room */
+#addRoomModal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+/*Dashboard*/
+#saveDashboard.text-button {
+    background-color: #298fc2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}

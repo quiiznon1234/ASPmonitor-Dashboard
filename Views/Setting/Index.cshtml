@@ -1,0 +1,83 @@
+﻿
+    @* For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860 *@
+
+@* @{
+    Layout = null;
+} *@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <title>Dynamic Dashboard</title>
+    <link rel="stylesheet" href="~/css/Setting.css">
+    <script src="~/js/Setting.js"></script>
+</head>
+
+
+
+<body>
+    <div class="container">
+        <!-- Dashboard Room -->
+        <div class="dashboard-room">
+            <div class="dashboard-header">
+                <h2>Dashboard Room</h2>
+                <div class="dashboard-actions">
+                    <button id="add-dashboard" class="text-button">Add</button> |
+                    <button id="remove-dashboard-row" class="text-button">Remove</button>
+                </div>
+            </div>
+            <table id="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Section -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Section</h2>
+                <div class="section-actions">
+                    <button id="add-section" class="text-button">Add</button> |
+                    <button id="remove-section" class="text-button">Remove</button>
+                </div>
+            </div>
+            <table id="room">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Section Name</th>
+                    </tr>
+                </thead>
+                <tbody id="section">
+                    <!-- Dynamic rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+        <div id="sectionModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Input Section Name</h3>
+                <input type="text" id="sectionNameInput" placeholder="Input section name">
+                <button id="saveSection" class="text-button">Save</button>
+            </div>
+        </div>
+        <div id="addDashboardModal" class="modal">
+            <div class="modal-content">
+                    <h3>Add Dashboard Room</h3>
+                    <span class="close">&times;</span>
+                    <input type="text" id="roomNameInput" placeholder="Enter room name">
+                <button id="saveDashboard" class="text-button">Save</button>
+            </div>
+         </div>
+</body>
+</html>

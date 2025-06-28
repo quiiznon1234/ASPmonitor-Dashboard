@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+  
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+	<Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ASPMonitorInterface\**" />
+    <Compile Remove="WebApplication1\**" />
+    <Content Remove="ASPMonitorInterface\**" />
+    <Content Remove="WebApplication1\**" />
+    <EmbeddedResource Remove="ASPMonitorInterface\**" />
+    <EmbeddedResource Remove="WebApplication1\**" />
+    <None Remove="ASPMonitorInterface\**" />
+    <None Remove="WebApplication1\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Setting.css" />
+    <None Remove="Setting.html" />
+    <None Remove="Setting.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <COMReference Include="{215d64d2-031c-33c7-96e3-61794cd1ee61}">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>4</VersionMinor>
+      <VersionMajor>2</VersionMajor>
+      <Guid>215d64d2-031c-33c7-96e3-61794cd1ee61</Guid>
+    </COMReference>
+    <COMReference Include="{bee4bfec-6683-3e67-9167-3c0cbc68f40a}">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>2</VersionMajor>
+      <Guid>bee4bfec-6683-3e67-9167-3c0cbc68f40a</Guid>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\DashBoard.css" />
+    <None Include="wwwroot\css\Home.css" />
+    <None Include="wwwroot\js\DashBoard.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Objects\" />
+  </ItemGroup>
+
+</Project>
