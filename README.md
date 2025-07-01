@@ -70,6 +70,13 @@ git push
 
 ---
 
+## 💡 Notes
+
+- This project depends on a Windows Form application (**Monitor Interface**) which parses `.RES` files and inserts the data into SQL Server for the dashboard to consume.
+- Make sure the database is synchronized correctly for real-time data to display.
+
+---
+
 ### 📥 Clone the repository
 
 ```bash
