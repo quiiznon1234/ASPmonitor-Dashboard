@@ -265,9 +265,11 @@ ServiceFabricBackup/
 *.mdf
 *.ldf
 *.ndf
-appsettings.Development.*.json
-appsettings.Production.*.json
-appsettings.*.json
+
+# Ignore configuration files (appsettings)
+appsettings.json
+appsettings.Development.json
+appsettings.Production.json
 
 # Business Intelligence projects
 *.rdl.data
